@@ -97,7 +97,10 @@ app.put('/api/media/:id', async (req, res) => {
         }
 
         const updatedMedia = { id_media: parseInt(id), judul, tahun_rilis, genre };
-        res.status(200).json(updatedMedia);
+        res.status(200).json({ 
+            message: 'Data media berhasil diperbaharui', 
+            data: updatedMedia 
+        });
     } catch (error) {
         res.status(500).json({ message: 'Kesalahan Server' });
     }
